@@ -21,3 +21,5 @@ Route::get('/dashboard', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::resource('dashboard/users', 'DashboardUserController');

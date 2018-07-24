@@ -20,6 +20,12 @@
 <!-- Sparkline JavaScript -->
 <script src="{{asset('admin/vendors/jquery.sparkline/dist/jquery.sparkline.min.js')}}"></script>
 
+<!-- Bootstrap Daterangepicker JavaScript -->
+<script src="{{asset('admin/vendors/bower_components/dropify/dist/js/dropify.min.js')}}"></script>
+
+<!-- Form Flie Upload Data JavaScript -->
+<script src="{{asset('admin/dist/js/form-file-upload-data.js')}}"></script>
+
 <script src="{{asset('admin/vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js')}}"></script>
 <script src="{{asset('admin/dist/js/skills-counter-data.js')}}"></script>
 
@@ -29,6 +35,11 @@
 <script src="{{asset('admin/dist/js/morris-data.js')}}"></script>
 
 <script src="{{asset('admin/vendors/bower_components/jquery-toast-plugin/dist/jquery.toast.min.js')}}"></script>
+
+
+<!-- Fancy Dropdown JS -->
+<script src="{{asset('admin/dist/js/dropdown-bootstrap-extended.js')}}"></script>
+
 <!-- Init JavaScript -->
 <script src="{{asset('admin/dist/js/init.js')}}"></script>
 <script src="{{asset('admin/dist/js/ecommerce-data.js')}}"></script>
