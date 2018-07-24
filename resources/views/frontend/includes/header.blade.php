@@ -29,10 +29,23 @@
                         <a href="https://plus.google.com/" title="Google Plus" target="_blank" class="text-link-white"><i class="fab fa-google-plus-g"></i></a>
                     </div>
                     <div class="separator-line-verticle-extra-small bg-dark-gray display-inline-block margin-two-lr hidden-xs position-relative vertical-align-middle"></div>
+
+                    <!-- Authentication Links -->
+                    @if (Auth::guest())
                     <div class="icon-social-very-small xs-width-100 xs-text-center display-inline-block">
                         <a href="{{ url('/login') }}" title="Login"  class="text-link-white"><i class="fa fa-sign-in-alt" aria-hidden="true"></i></a>
                         <a href="{{ url('/register') }}" title="Register"  class="text-link-white"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
                     </div>
+                    @else
+                        <div class="btn-group dropdown-style-1 xs-width-100 xs-text-center xs-margin-three-bottom display-inline-block">
+                            <button type="button" class="btn dropdown-toggle xs-width-100" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu xs-width-100">
+                                <li><a href="{{ url('/logout') }}" title="Logout"><span class="fa fa-sign-out-alt"></span>Logout</a></li>
+                            </ul>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

@@ -26,12 +26,26 @@
         <div class="row equalize sm-equalize-auto margin-top-50 margin-bottom-50">
             <div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12 sm-margin-30px-bottom wow fadeInLeft">
             <div class="padding-fifteen-all bg-light-gray border-radius-6 md-padding-seven-all xs-padding-30px-all height-100">
-                <form id="contact-form" action="javascript:void(0)" method="post">
+                <form id="contact-form" method="POST" action="{{ url('/login') }}">
+                    {{ csrf_field() }}
                     <div>
                         <div id="success-contact-form" class="no-margin-lr"></div>
-                        <input type="text" name="email" id="email" placeholder="E-mail*" class="border-radius-4 bg-white medium-input">
-                        <input type="password" name="name" id="password" placeholder="Password*" class="border-radius-4 bg-white medium-input">
-
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <input type="text" name="email" id="email" placeholder="E-mail*" class="border-radius-4 bg-white medium-input" value="{{ old('email') }}">
+                            @if ($errors->has('email'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <input type="password"  name="password" id="password" placeholder="Password*" class="border-radius-4 bg-white medium-input">
+                            @if ($errors->has('password'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox" name="remember"> Remember Me
